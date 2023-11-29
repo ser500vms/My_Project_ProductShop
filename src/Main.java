@@ -1,17 +1,29 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Wordrobe wordrobe1 = new Wordrobe(1, "For eating products", 30);
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        Coocies nestle1 = new Coocies(1, "Nestle -> Dark Fantasy","Cookies",
+                0.25, 300, 120);
+        Coocies nestle2 = new Coocies(2, "Nestle -> White Fantasy","Cookies",
+                0.25, 300, 120);
+        Coocies nestle3 = new Coocies(3, "Nestle -> Big Bananza","Cookies",
+                0.5, 500, 320);
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        KendyShell CokiesShell1 = new KendyShell(1, 20, 5, "Shell for cookies");
+
+        wordrobe1.addShellToWordrobe(CokiesShell1);
+        System.out.println(wordrobe1);
+
+        CokiesShell1.addProductToShell(nestle1);
+        System.out.println(CokiesShell1);
+
+        VolumeDetector volumeDetector1 = new VolumeDetector(1);
+        volumeDetector1.setVolumeSignal(true);
+        CokiesShell1.removeProductFromShell(nestle1, volumeDetector1);
+        System.out.println(CokiesShell1);
+
+
+
     }
 }
